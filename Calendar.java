@@ -17,17 +17,11 @@ public class Calendar {
 	public static void main(String args[]) {
 		String stringYearInput = args[0];
         int yearInput = Integer.parseInt(stringYearInput);
-		// Advances the date and the day-of-the-week from 1/1/1900 till 31/12/1999, inclusive.
-	    // Prints each date dd/mm/yyyy in a separate line. If the day is a Sunday, prints "Sunday".
-	    // The following variable, used for debugging purposes, counts how many days were advanced so far.
-	    int debugDaysCounter = 0; 
-	    //// Write the necessary initialization code, and replace the condition
+		//// Write the necessary initialization code, and replace the condition
 	    //// of the while loop with the necessary condition 
 		while (dayOfMonth != 31 || month != 12 || year != (yearInput)) {
 			advance();
-	 		debugDaysCounter++;
-
-            if (year == yearInput) {
+	 		if (year == yearInput) {
                 if (dayOfWeek == 1) {
                     sundayC++;
                     System.out.println(dayOfMonth + "/" + month + "/" + year + " Sunday");

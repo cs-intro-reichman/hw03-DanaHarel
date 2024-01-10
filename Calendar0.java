@@ -22,13 +22,20 @@ public class Calendar0 {
 
 	// Tests the nDaysInMonth function.
 	private static void nDaysInMonthTest(int year) {
-		// Replace this comment with your code
+		for (int i=1; i < 13; i++) {
+			System.out.println("Month " + i + " has " + nDaysInMonth(i, year) + " days");
+
 	}
+}
 
 	// Returns true if the given year is a leap year, false otherwise.
 	public static boolean isLeapYear(int year) {
-	    // Replace the following statement with your code
-		return false;
+		boolean isLeapYear;
+		
+		isLeapYear = ((year % 400) == 0); 
+		isLeapYear = isLeapYear || (((year % 4) == 0) && ((year % 100) != 0));
+
+		return isLeapYear;
 	}
 	 
 	// Returns the number of days in the given month and year.
@@ -36,7 +43,43 @@ public class Calendar0 {
 	// February has 28 days in a common year, and 29 days in a leap year.
 	// All the other months have 31 days.
 	public static int nDaysInMonth(int month, int year) {
-		// Replace the following statement with your code
+		boolean isLeapYear = isLeapYear(year);
+		int feb;
+		if (isLeapYear) {
+			feb = 29;
+		}
+		else {
+			feb = 28;
+		}
+		switch (month) {
+			case 1:
+				return 31;
+			case 2:
+				return feb;
+			case 3:
+				return 31;	
+			case 4:
+				return 30;
+			case 5:
+				return 31;
+			case 6:
+				return 30;
+			case 7:	
+				return 31;
+			case 8:
+				return 31;	
+			case 9:
+				return 30;
+			case 10:
+				return 31;
+			case 11:
+				return 30;
+			case 12:
+				return 31;
+		
+		}
+	
+
 		return 0;
 	}
 }
