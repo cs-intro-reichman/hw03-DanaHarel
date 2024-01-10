@@ -75,7 +75,7 @@ public class Calendar {
 		boolean isLeapYear;
 		
 		isLeapYear = ((year % 400) == 0); 
-		isLeapYear = isLeapYear || (((year % 4) == 0) && ((year % 100) != 0));
+		isLeapYear = ((year % 400) == 0) || (((year % 4) == 0) && ((year % 100) != 0));
 
 		return isLeapYear;
 	}
