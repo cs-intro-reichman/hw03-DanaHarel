@@ -23,7 +23,7 @@ public class Calendar {
 	    int debugDaysCounter = 0; 
 	    //// Write the necessary initialization code, and replace the condition
 	    //// of the while loop with the necessary condition 
-		while (year != (yearInput) || month != 12 || dayOfMonth != 31) {
+		while (dayOfMonth != 31 || month != 12 || year != (yearInput)) {
 			advance();
 	 		debugDaysCounter++;
 
@@ -53,15 +53,13 @@ public class Calendar {
 		else {
 			dayOfWeek++;
 		}
-		if (dayOfMonth == 31 && month == 12) {
+		if (month == 12 && dayOfMonth == 31) {
+			month = 1;
+			dayOfMonth = 1;
 			year++;
-            dayOfMonth = 1;
-            month = 1;
-			
 		}
-		else if (nDaysInMonth == dayOfMonth) {
-			
-            month++;
+		else if (dayOfMonth == nDaysInMonth) {
+			month++;
 			nDaysInMonth = nDaysInMonth(month, year);
 			dayOfMonth = 1;
 		}
