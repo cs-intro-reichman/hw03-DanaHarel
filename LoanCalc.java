@@ -43,7 +43,7 @@ public class LoanCalc {
 		double g = (loan/n);
 		iterationCounter = 0;
 		double f = endBalance(loan, rate, n, g);
-		while(f > epsilon){	
+		while(epsilon < f){	
 			if (f > 0){
 				g = g + epsilon;
 			}
@@ -91,12 +91,12 @@ public class LoanCalc {
 	* interest rate (as a percentage), the number of periods (n), and the periodical payment.
 	*/
 	private static double endBalance(double loan, double rate, int n, double payment) {
-		double balance = loan;
+		double bal = loan;
 		rate /= 100;
 		for (int i = n; i > 0; i--) {
-			balance = ((balance - payment)*(1 + rate));
+			bal = ((bal - payment)*(1 + rate));
 		}
 
-    	return balance;
+    	return bal;
 	}
 }
