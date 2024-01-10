@@ -71,10 +71,14 @@ public class Calendar {
 	} 
 		 
     // Returns true if the given year is a leap year, false otherwise.
-public static boolean isLeapYear(int year) {
-    return ((year % 400) == 0) || (((year % 4) == 0) && ((year % 100) != 0));
-}
+	public static boolean isLeapYear(int year) {
+		boolean isLeapYear;
+		
+		isLeapYear = ((year % 400) == 0); 
+		isLeapYear = isLeapYear || (((year % 4) == 0) && ((year % 100) != 0));
 
+		return isLeapYear;
+	}
 	 
 	// Returns the number of days in the given month and year.
 	// April, June, September, and November have 30 days each.
