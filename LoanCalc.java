@@ -86,7 +86,7 @@ public class LoanCalc {
 
 		return a;
     }
-    }
+    
 	
 	/**
 	* Computes the ending balance of a loan, given the sum of the loan, the periodical
@@ -99,6 +99,6 @@ public class LoanCalc {
 			bal = ((bal - payment)*(1 + rate));
 		}
 
-    	return balance;
+    	return bal;
 	}
-	
+}
